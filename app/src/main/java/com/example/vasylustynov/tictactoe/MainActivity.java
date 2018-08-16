@@ -1,9 +1,10 @@
 package com.example.vasylustynov.tictactoe;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+
+import com.example.vasylustynov.tictactoe.tictactoe.Player;
 
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -15,15 +16,13 @@ public class MainActivity extends AppCompatActivity {
         startAsXBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, GameActivity.class);
-                startActivity(intent);
+                GameActivity.start(MainActivity.this, Player.X);
             }
         });
         startAsOBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, GameActivity.class);
-                startActivity(intent);
+                GameActivity.start(MainActivity.this, Player.O);
             }
         });
     }

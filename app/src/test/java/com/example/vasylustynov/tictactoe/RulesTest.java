@@ -26,7 +26,17 @@ public class RulesTest {
     }
 
     @Test
-    public void testDraw() {
+    public void testNotFullBoardAndNotAWinIsNotADraw() {
+        board.move(2, 2, Player.X);
+        board.move(0, 0, Player.O);
+        board.move(1, 1, Player.X);
+        board.move(2, 0, Player.O);
+        board.move(2, 1, Player.X);
+        assertFalse(rules.isDraw());
+    }
+
+    @Test
+    public void testFullBoardAndNotAWinIsADraw() {
         board.move(2, 2, Player.X);
         board.move(0, 0, Player.O);
         board.move(0, 2, Player.X);
@@ -46,7 +56,7 @@ public class RulesTest {
         board.move(1, 1, Player.X);
         board.move(2, 2, Player.O);
         board.move(1, 2, Player.X);
-        assertTrue(rules.isWin(Player.X));
+        assertTrue(rules.isWin());
     }
 
     @Test
@@ -56,7 +66,7 @@ public class RulesTest {
         board.move(1, 1, Player.X);
         board.move(1, 2, Player.O);
         board.move(2, 2, Player.X);
-        assertTrue(rules.isWin(Player.X));
+        assertTrue(rules.isWin());
     }
 
     @Test
@@ -66,7 +76,7 @@ public class RulesTest {
         board.move(1, 1, Player.X);
         board.move(1, 2, Player.O);
         board.move(2, 0, Player.X);
-        assertTrue(rules.isWin(Player.X));
+        assertTrue(rules.isWin());
     }
 
     @Test
@@ -76,6 +86,6 @@ public class RulesTest {
         board.move(1, 0, Player.X);
         board.move(2, 2, Player.O);
         board.move(2, 0, Player.X);
-        assertTrue(rules.isWin(Player.X));
+        assertTrue(rules.isWin());
     }
 }

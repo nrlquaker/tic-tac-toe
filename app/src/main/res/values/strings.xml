@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">TicTacToe</string>
     <string name="start_as">Start as</string>
+    <string name="occupied_dialog_message">Square is occupied!</string>
+    <string name="win_dialog_message">%s wins</string>
+    <string name="draw_dialog_message">Draw</string>
+    <string name="turn_info">\'s turn</string>
 </resources>
